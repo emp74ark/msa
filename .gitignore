@@ -1,0 +1,5 @@
+.idea
+/api-gw/dist
+/api-gw/node_modules
+/auth/dist
+/auth/node_modules

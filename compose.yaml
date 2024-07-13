@@ -1,0 +1,32 @@
+name: msa
+services:
+  api-gw:
+    build:
+      context: ./api-gw
+    restart: always
+    ports:
+      - 4100:4100
+  auth-ms:
+    build:
+      context: ./auth
+    restart: always
+    ports:
+      - 4200:4200
+    depends_on:
+      - api-gw
+  ms1:
+    build:
+      context: ./ms1
+    restart: always
+    ports:
+      - 4300:4300
+    depends_on:
+      - api-gw
+  ms2:
+    build:
+      context: ./ms2
+    restart: always
+    ports:
+      - 4400:4400
+    depends_on:
+      - api-gw
